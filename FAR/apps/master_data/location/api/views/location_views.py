@@ -6,7 +6,7 @@ from apps.master_data.location.models.location_models import Location
 from apps.master_data.location.api.serializers.location_serializers import LocationSerializer
 from apps.common.utils.search.search_engine import SearchEngine
 from django_filters.rest_framework import DjangoFilterBackend
-from apps.reference.pagination.location_paginations import StandardResultsSetPagination
+from apps.reference.pagination.global_paginations import StandardResultsSetPagination
 
 
 class LocationViewSet(viewsets.ModelViewSet):  
