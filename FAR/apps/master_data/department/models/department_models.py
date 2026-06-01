@@ -23,7 +23,9 @@ class Department(models.Model):
     )
     
     dept_code = models.CharField(max_length=20, null=True, blank=True)
-    dept_name = models.CharField(max_length=100)  
+    dept_name = models.CharField(max_length=100)
+    dept_short_name = models.CharField(max_length=10, null=True, blank=True)
+  
     
     
     dept_type = models.CharField(
