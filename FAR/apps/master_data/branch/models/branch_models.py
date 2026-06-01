@@ -3,9 +3,6 @@ from django.db import models
 from apps.master_data.country.models.country_models import Country
 
 
-
-
-
 class Branch(models.Model):
     branch_id = models.AutoField(primary_key=True)
 

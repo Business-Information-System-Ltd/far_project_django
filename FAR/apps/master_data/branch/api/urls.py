@@ -12,7 +12,7 @@ router.register(r'', BranchViewSet)
 urlpatterns = [
      path('', include(router.urls)),
      path(
-        "fields/<str:field_name>/",
+        "meta/fields/<str:field_name>/",
         BranchFieldMetaView.as_view()
     ),
 

@@ -10,7 +10,7 @@ router.register(r'', DepartmentViewSet)
 urlpatterns = [
      path('', include(router.urls)),
       path(
-        "fields/<str:field_name>/",
+        "meta/fields/<str:field_name>/",
         DepartmentFieldMetaView.as_view()
     ),
     

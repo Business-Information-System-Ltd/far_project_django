@@ -11,6 +11,6 @@ router.register(r'', LocationViewSet, basename='location')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('fields/<str:field_name>/', LocationFieldMetaView.as_view(), name='location-field-meta'),
-    # path("search/", SearchAPIView.as_view(), name="search"),
+    path('meta/fields/<str:field_name>/', LocationFieldMetaView.as_view(), name='location-field-meta'),
+    # path("search/", SearchAPIView.as_view(), name="search"),      
 ]

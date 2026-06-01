@@ -1,5 +1,6 @@
 from rest_framework import serializers 
 from apps.master_data.currency.models.currency_models import Currency
+from apps.master_data.currency.api.serializers.currency_serializers import CurrencySerializer
 from apps.master_data.country.models.country_models import Country
 from apps.common.validators.validators import (
      uppercase_text, 
@@ -9,6 +10,13 @@ class CountrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Country
         fields = "__all__"
+
+    currency = CurrencySerializer(read_only=True)
+    currency_id = serializers.PrimaryKeyRelatedField(
+        queryset=Currency.objects.all(),
+        source="currency",
+        write_only=True
+    )
 
     def validate_country_code(self, value): 
         return validate_country_code(value)
