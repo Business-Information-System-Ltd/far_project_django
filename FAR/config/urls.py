@@ -27,6 +27,7 @@ from apps.master_data.branch.meta.branch_field_meta_view import BranchFieldMetaV
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+<<<<<<< HEAD
     # path('api/far/meta/currencies/fields/',
     #      CurrencyFieldMetaView.as_view()),
 
@@ -47,4 +48,7 @@ urlpatterns = [
         
 
     ])),
+=======
+    path('api/v1/far/', include('apps.master_data.urls')),
+>>>>>>> afc35d137644c422519aa9463502b018c0d42f25
 ]

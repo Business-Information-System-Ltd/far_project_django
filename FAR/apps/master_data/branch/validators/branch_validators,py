@@ -1,4 +1,4 @@
-from .validators import trim_text, validate_code_pattern
+from apps.common.validators.validators import trim_text, validate_code_pattern
 from apps.master_data.branch.models.branch_models import Branch
 from rest_framework import serializers
 
