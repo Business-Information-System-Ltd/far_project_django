@@ -2,6 +2,7 @@ from rest_framework import serializers
 from apps.master_data.location.models.location_models import Location
 
 class LocationSerializer(serializers.ModelSerializer):
+
     
     class Meta:
         model = Location
@@ -18,3 +19,4 @@ class LocationSerializer(serializers.ModelSerializer):
     def validate_location_type(self, value):
         """Validate location type - convert to proper case (first letter uppercase, rest lowercase)"""
         return validate_location_type(value)
+

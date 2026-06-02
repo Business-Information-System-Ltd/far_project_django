@@ -1,4 +1,5 @@
 from django.db import models
+from apps.master_data.country.models.country_models import Country
 
 class Location(models.Model):
     
@@ -10,8 +11,8 @@ class Location(models.Model):
         BRANCH = 'BRANCH', 'Branch'
 
     location_id = models.AutoField(primary_key=True)
-   # models.py
-    country_id = models.IntegerField(null=True, blank=True) 
+  
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='locations', db_column='country_id') 
     
     parent_location = models.ForeignKey(
         'self', 
@@ -36,8 +37,7 @@ class Location(models.Model):
     line2 = models.CharField(max_length=255, null=True, blank=True)
     gps_map_reference = models.CharField(max_length=255, null=True, blank=True)
     
-    full_location_code = models.CharField(max_length=100, null=True, blank=True)
-    full_path = models.TextField(null=True, blank=True)
+    
     
   
     allow_asset_assignment = models.BooleanField(default=True) 
@@ -51,12 +51,7 @@ class Location(models.Model):
     class Meta:
         db_table = 'location'  
     def save(self, *args, **kwargs):
-        if self.parent_location:
-            self.full_path = f"{self.parent_location.full_path} > {self.location_name}"
-            self.full_location_code = f"{self.parent_location.full_location_code}-{self.location_code}"
-        else:
-            self.full_path = self.location_name
-            self.full_location_code = self.location_code
+        
             
         super(Location, self).save(*args, **kwargs)
 
