@@ -25,7 +25,7 @@ router.register(r'', CurrencyViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path(
-        "fields/<str:field_name>/",
+        "meta/fields/<str:field_name>/",
         CurrencyFieldMetaView.as_view()
     ),
 ]

@@ -22,7 +22,7 @@ router.register(r'', CustodianViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path(
-        "fields/<str:field_name>/",
+        "meta/fields/<str:field_name>/",
         CustodianFieldMetaView.as_view()
     ),
 ]

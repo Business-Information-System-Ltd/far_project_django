@@ -20,7 +20,8 @@ class Location(models.Model):
         null=True, 
         blank=True, 
         related_name='sub_locations',
-        db_column='parent_location_id'
+        db_column='parent_location_id',
+        
     )
     
     location_code = models.CharField(max_length=10)

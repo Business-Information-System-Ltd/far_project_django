@@ -30,6 +30,7 @@ def trim_upper_text(value: Optional[str]) -> Optional[str]:
     return uppercase_text(value)
 
 
+
 def validate_code_pattern( 
     value: str, 
     pattern: str = r"^[A-Z0-9\-_]+$", 
