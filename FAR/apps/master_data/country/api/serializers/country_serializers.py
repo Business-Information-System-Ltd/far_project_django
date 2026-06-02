@@ -17,6 +17,7 @@ class CountrySerializer(serializers.ModelSerializer):
         value = uppercase_text(value) 
         if not value: 
             raise serializers.ValidationError("Country name is required.") 
+
         return value
     
 

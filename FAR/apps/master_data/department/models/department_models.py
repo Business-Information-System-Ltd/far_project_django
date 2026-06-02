@@ -1,11 +1,11 @@
 from django.db import models
 
+
 class Department(models.Model):
     
     class DepartmentType(models.TextChoices):
-       
         OPERATIONS = 'OPERATIONS', 'Operations'
-        SUPPORT = 'SUPPORT','Support'
+        SUPPORT = 'SUPPORT', 'Support'
 
     department_id = models.AutoField(primary_key=True)
     

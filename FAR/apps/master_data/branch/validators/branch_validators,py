@@ -1,0 +1,20 @@
+from .validators import trim_text, validate_code_pattern
+from apps.master_data.branch.models.branch_models import Branch
+from rest_framework import serializers
+
+def validate_branch_code(value):
+    
+    validate_code_pattern(value, r"^[A-Z0-9\-_]+$", "Branch code")
+    
+    if Branch.objects.filter(branch_code=value).exists():
+        raise serializers.ValidationError("")
+    return value
+
+def validate_branch_name(value):
+    value = trim_text(value)
+    if not value:
+        raise serializers.ValidationError("Branch name is required")
+    return value
+
+def validate_city(value):
+    return trim_text(value)

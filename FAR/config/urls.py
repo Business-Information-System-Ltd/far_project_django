@@ -22,6 +22,8 @@ from apps.master_data.currency.meta.currency_field_meta_view import CurrencyFiel
 from apps.master_data.custodian.meta.custodian_field_meta_view import CustodianFieldMetaView
 
 from rest_framework.routers import DefaultRouter
+
+from apps.master_data.branch.meta.branch_field_meta_view import BranchFieldMetaView
 urlpatterns = [
     path('admin/', admin.site.urls),
 
